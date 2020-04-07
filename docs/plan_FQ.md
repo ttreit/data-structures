@@ -5,16 +5,16 @@
 
 **Output**: side effect add string to storage object with next available key
 
-**Constraints**: No Arrays
+**Constraints**: No Arrays, No keywords **new**, **this**, or prototype chains. Don't capitalize the maker function name.
 
-**Edge Cases**: Empty string passed in, non-string passed in
+**Edge Cases**: Empty string passed in
 
 ## dequeue()
 **Input**: None
 
 **Output**: Return first item and delete from storage
 
-**Constraints**: No Arrays
+**Constraints**: No Arrays, No keywords **new**, **this**, or prototype chains. Don't capitalize the maker function name.
 
 **Edge Cases**: Empty queue
 
@@ -23,9 +23,9 @@
 
 **Output**: type: number - returns number of items in queue
 
-**Constraints**: No Arrays
+**Constraints**: No Arrays, No keywords **new**, **this**, or prototype chains. Don't capitalize the maker function name.
 
-**Edge Cases**: Empty queue
+**Edge Cases**: None
 
 
 # Justification
@@ -56,18 +56,31 @@ returns the number of items in the queue
 
 <!-- select and copy image to clipboard -->
 <!-- Use cmd + alt + v to paste (vsc paste image extn) -->
-## enqueue (string)
+## enqueue and dequeue
+![](2020-04-06-20-46-57.png) NOTE: at bottom of DQ section it should've started at 4 not 5. So i = 4, then i - 1, then i = 3.
 
-
-## dequeue()
 ## size()
+(return i )
 
 # Approximation
 <!-- ## Pseudocode -->
 <!-- Complete, without ambiguity, high level as possible, indented to show subordinate steps, translateable to one real line of code -->
+
+create an empty storage object
+set i = 0
+
 ## enqueue (string)
+push k/v pair (i: string) into storage object
+increment i
+
 ## dequeue()
+return value with key '0' (create seperate function for this)
+delete k/v pair at key i
+decrement i
+derement all keys
+
 ## size()
+return i
 
 # Verification
 <!-- Use sample data to walk through pseudocode
@@ -76,9 +89,15 @@ Write one sanity test -->
 ## dequeue()
 ## size()
 
+Sanity Test
+add three items
+return size
+dequeue an item
+return size
+add another item
+return size
+
 
 # Implementation
-<!-- Code! -->
-## enqueue (string)
-## dequeue()
-## size()
+<!-- Go Code! -->
+
