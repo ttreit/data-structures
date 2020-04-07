@@ -34,7 +34,7 @@
 enqueue adds given string to the end of the queue
 
 ## dequeue()
-dequeue removes and return the string from front of the queue
+dequeue removes and return the string from front of the queue (FIFO)
 
 ## size()
 size returns the number of items in queue
@@ -94,7 +94,7 @@ Write one sanity test -->
 ## dequeue()
 ## size()
 
-Sanity Test
+### Sanity Test
 
 add three items
 
