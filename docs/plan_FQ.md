@@ -67,16 +67,21 @@ returns the number of items in the queue
 <!-- Complete, without ambiguity, high level as possible, indented to show subordinate steps, translateable to one real line of code -->
 
 create an empty storage object
+
 set i = 0
 
 ## enqueue (string)
 push k/v pair (i: string) into storage object
+
 increment i
 
 ## dequeue()
 return value with key '0' (create seperate function for this)
+
 delete k/v pair at key i
+
 decrement i
+
 derement all keys
 
 ## size()
@@ -90,11 +95,17 @@ Write one sanity test -->
 ## size()
 
 Sanity Test
+
 add three items
+
 return size
+
 dequeue an item
+
 return size
+
 add another item
+
 return size
 
 
