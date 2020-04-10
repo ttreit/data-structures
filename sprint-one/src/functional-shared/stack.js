@@ -2,9 +2,7 @@ var Stack = function() {
   var stack = {};
   stack.storage = {};
   stack.i = 0;
-  for (key in stackMethods) {
-    stack[key] = stackMethods[key];
-  }
+  _.extend(stack, stackMethods);
   return stack;
 };
 

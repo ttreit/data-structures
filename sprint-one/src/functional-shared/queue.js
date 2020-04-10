@@ -3,9 +3,7 @@ var Queue = function() {
   queue.storage = {};
   queue.i = 0;
   // get methods into constructor
-  for (key in queueMethods) {
-    queue[key] = queueMethods[key];
-  }
+  _.extend(queue, queueMethods);
 
   return queue;
 };
