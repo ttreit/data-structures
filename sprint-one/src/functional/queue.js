@@ -1,4 +1,8 @@
+//Notes for future reference/refactoring:
+// Would be better to use a variable to hold current number and increment that rather than using zero as always the first in line. Could get rid of the loop this way because you wouldn't have to decrement anything. So first value ever would get property of 0. No other value ever would get that property. Delete zero when leaves queue and go to next number. Keep assigning new numbers to new items in queue.
+
 var Queue = function() {
+
   var someInstance = {};
 
   // Use an object with numeric keys to store values
