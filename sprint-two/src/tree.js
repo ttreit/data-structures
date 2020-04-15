@@ -14,7 +14,8 @@ treeMethods.addChild = function(value) {
 };
 
 treeMethods.contains = function(target) {
-  var findTarget = function(children, target) { //children = node.children (an array)
+  debugger;
+  var findTarget = function(children, target) {
     if (children.length === 0) {
       return false;
     } else {
@@ -22,9 +23,10 @@ treeMethods.contains = function(target) {
         if (children[i].value === target) {
           return true;
         } else {
-          findTarget(children[i], target);
+          return findTarget(children[i].children, target);
         }
       }
+
     }
   };
 
@@ -36,8 +38,6 @@ treeMethods.contains = function(target) {
 };
 
 
-
 /*
  * Complexity: What is the time complexity of the above functions?
  */
-
