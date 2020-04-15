@@ -14,20 +14,21 @@ treeMethods.addChild = function(value) {
 };
 
 treeMethods.contains = function(target) {
-  // if (target === 7) {
-  //   debugger;
-  // }
   var findTarget = function(children, target) {
     if (children.length === 0) {
       return false;
     } else {
-      for (var i = 0; i < children.length; i++) {  //never gets to i of 1 or more.
+      for (var i = 0; i < children.length; i++) {
         if (children[i].value === target) {
           return true;
         } else {
-          return findTarget(children[i].children, target);
+          var ftResult = findTarget(children[i].children, target);
+          if (ftResult) {
+            return ftResult;
+          }
         }
       }
+      return false;
     }
   };
 
