@@ -15,21 +15,22 @@ treeMethods.addChild = function(value) {
 
 treeMethods.contains = function(target) {
   var findTarget = function(children, target) {
+    //base case
     if (children.length === 0) {
       return false;
-    } else {
-      for (var i = 0; i < children.length; i++) {
-        if (children[i].value === target) {
-          return true;
-        } else {
-          var ftResult = findTarget(children[i].children, target);
-          if (ftResult) {
-            return ftResult;
-          }
+    }
+    //recursive
+    for (var i = 0; i < children.length; i++) {
+      if (children[i].value === target) {
+        return true;
+      } else {
+        var findTargetResult = findTarget(children[i].children, target);
+        if (findTargetResult) {
+          return findTargetResult;
         }
       }
-      return false;
     }
+    return false;
   };
 
   if (this.value === target) {
