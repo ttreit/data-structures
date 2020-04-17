@@ -22,22 +22,15 @@ treeMethods.contains = function(target) {
 
   var findTarget = function(obj, target) {
     if (obj.value === target) {
-      return true;
+      result = true;
     }
-    //base case
-
-    //recursion
     if (obj.children.length) {
       for (var e of obj.children) {
-        return findTarget(e);
+        findTarget(e, target);
       }
     }
-
-
   };
-
-  result = (findTarget(this, target) ? true : false);
-  //recursion
+  findTarget(this, target);
 
   return result;
 };
