@@ -31,8 +31,10 @@ creates new node in graph
 ## removeEdge
 
 ## forEachNode
+
 **Constraints**:
 ## addNode
+Pseudoclassical Style
 
 ## contains
 
@@ -46,8 +48,9 @@ creates new node in graph
 
 ## forEachNode
 **Edge Cases**:
+
 ## addNode
-no value
+value that is already present in the graph. ex: "apple" is in the graph and we try to add "apple" again. Or two people with the same name.
 
 ## contains
 
@@ -64,6 +67,7 @@ no value
 # Justification
 <!-- ## Purpose of Calling this Function -->
 ## addNode
+to add a new node to the graph
 
 ## contains
 
@@ -80,6 +84,7 @@ no value
 # Explanation
 <!-- ## Clearly state relationship between Inputs and Outputs in Plain English -->
 ## addNode
+We will take in a value and create a node with that value in the graph. It is not connected to anything at this point. Must use .addEdge to connect it.
 
 ## contains
 
