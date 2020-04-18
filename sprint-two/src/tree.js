@@ -1,43 +1,38 @@
 var Tree = function(value) {
-  var node = {};
-  node.value = value;
-  node.children = [];
-  _.extend(node, treeMethods);
-  return node;
+  var newTree = {};
+  newTree.value = value;
+
+
+  newTree.children = [];
+
+  _.extend(newTree, treeMethods);
+
+  return newTree;
 };
 
 var treeMethods = {};
 
 treeMethods.addChild = function(value) {
-  var childNode = Tree(value);
-  this.children.push(childNode);
+  var child = Tree(value);
+  this.children.push(child);
 };
 
 treeMethods.contains = function(target) {
-  var findTarget = function(children, target) {
-    //base case
-    if (children.length === 0) {
-      return false;
+  var result = false;
+
+  var findTarget = function(obj, target) {
+    if (obj.value === target) {
+      result = true;
     }
-    //recursive
-    for (var i = 0; i < children.length; i++) {
-      if (children[i].value === target) {
-        return true;
-      } else {
-        var findTargetResult = findTarget(children[i].children, target);
-        if (findTargetResult) {
-          return findTargetResult;
-        }
+    if (obj.children.length) {
+      for (var e of obj.children) {
+        findTarget(e, target);
       }
     }
-    return false;
   };
+  findTarget(this, target);
 
-  if (this.value === target) {
-    return true;
-  } else {
-    return findTarget(this.children, target);
-  }
+  return result;
 };
 
 
